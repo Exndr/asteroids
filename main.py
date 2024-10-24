@@ -36,6 +36,13 @@ def main():
         pygame.display.flip() #refresh the screen
 
         dt = clock.tick(60) / 1000 # Limit to 60 frames per second
+        
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_a]:  # Rotate left
+            player.rotate(-dt)
+        if keys[pygame.K_d]:  # Rotate right
+            player.rotate(dt)
+        player.update(dt)
 
 
         
